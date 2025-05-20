@@ -19,12 +19,12 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     Optional<Employee> findEmployeeByEmail(String Email);
 
     @Query(value = "SELECT * FROM employee WHERE " +
-            "(:firstNameFilter IS NULL OR LOWER(first_name) LIKE LOWER(CONCAT('%', :fristNameFilter, '%'))) AND " +
+            "(:firstNameFilter IS NULL OR LOWER(first_name) LIKE LOWER(CONCAT('%', :firstNameFilter, '%'))) AND " +
             "(:lastNameFilter IS NULL OR LOWER(last_name) LIKE LOWER(CONCAT('%', :lastNameFilter, '%'))) AND " +
             "(:roleFilter IS NULL OR LOWER(role) LIKE LOWER(CONCAT('%', :roleFilter, '%'))) AND " +
             "(:emailFilter IS NULL OR LOWER(email) LIKE LOWER(CONCAT('%', :emailFilter, '%')))",
             countQuery ="SELECT COUNT (*) FROM employee WHERE " +
-                        "(:firstNameFilter IS NULL OR LOWER(first_name) LIKE LOWER(CONCAT('%', :fristNameFilter, '%'))) AND " +
+                        "(:firstNameFilter IS NULL OR LOWER(first_name) LIKE LOWER(CONCAT('%', :firstNameFilter, '%'))) AND " +
                         "(:lastNameFilter IS NULL OR LOWER(last_name) LIKE LOWER(CONCAT('%', :lastNameFilter, '%'))) AND " +
                         "(:roleFilter IS NULL OR LOWER(role) LIKE LOWER(CONCAT('%', :roleFilter, '%'))) AND " +
                         "(:emailFilter IS NULL OR LOWER(email) LIKE LOWER(CONCAT('%', :emailFilter, '%')))",
